@@ -15,5 +15,5 @@ public class User {
     Integer id;
     String ipAddress;
     String apiKey;
-    Instant createdAt;
+    Instant createdOn;
 }

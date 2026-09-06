@@ -25,12 +25,12 @@ public class UserService {
         }
         ApiKeyGenerator generator = new ApiKeyGenerator(0);
         String apiKey = generator.generateApiKey(ipAddress);
-        Instant createdAt = Instant.now();
+        Instant createdOn = Instant.ofEpochMilli(System.currentTimeMillis());
 
         User user = new User();
         user.setApiKey(apiKey);
         user.setIpAddress(ipAddress);
-        user.setCreatedAt(createdAt);
+        user.setCreatedOn(createdOn);
 
         userRepository.save(user);
         return new ResponseEntity<>(apiKey, HttpStatus.CREATED);
