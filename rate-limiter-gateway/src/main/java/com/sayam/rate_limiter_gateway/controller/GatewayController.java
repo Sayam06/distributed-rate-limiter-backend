@@ -32,4 +32,9 @@ public class GatewayController {
     public Mono<ResponseEntity<String>> redirectToActualUrl(@PathVariable String shortUrl) {
         return gatewayService.redirectToActualUrl(shortUrl);
     }
+
+    @PutMapping("hi")
+    public String hello() {
+        return "hi";
+    }
 }
