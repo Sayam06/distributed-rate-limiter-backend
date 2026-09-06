@@ -56,8 +56,6 @@ public class GatewayService {
 
     public Mono<ResponseEntity<String>> createApiKey(ServerWebExchange exchange) {
         String clientIp = exchange.getRequest().getRemoteAddress().getAddress().getHostAddress();
-        System.out.println("Registration URL = " + registrationUrl);
-        System.out.println("Calling URL = " + registrationUrl + "/generateAPIKey");
         return webClient.post()
                 .uri(registrationUrl + "/generateAPIKey")
                 .header("X-Forwarded-For", clientIp)
