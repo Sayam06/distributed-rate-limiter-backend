@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 
 
 @RestController
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin("https://url-shortener-frontend-m38d.onrender.com/")
 public class GatewayController {
     @Autowired
     private GatewayService gatewayService;
